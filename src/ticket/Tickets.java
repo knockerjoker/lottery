@@ -1,6 +1,7 @@
 package ticket;
 
 import lottery.lottoBalls;
+import results.rank;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -31,6 +32,18 @@ public abstract class Tickets {
     private boolean noDuplicants(List<lottoBalls> lottoNumbers){
         Set<lottoBalls> tmp = new HashSet<>(lottoNumbers);
         return tmp.size() == lottoNumbers.size();
+    }
+
+    public boolean has(final lottoBalls ball){
+        return lottoNumbers.contains(ball);
+    }
+
+    public rank getRank (final Tickets wonTicket, final lottoBalls bonus){
+        final int ballsMatch = (int) lottoNumbers.stream()
+                                .filter(wonTicket::has)
+                                .count();
+        final boolean bonusMatch = this.has(bonus);
+        return rank.rankAndPrize(ballsMatch, bonusMatch);
     }
 
     protected abstract List<lottoBalls> create(List<lottoBalls> lottoNumbers);
