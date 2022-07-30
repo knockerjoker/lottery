@@ -1,10 +1,10 @@
-package view;
+package seller;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class moneyCheck {
-    private  final  BigDecimal oneTicket = BigDecimal.valueOf(1000);
+    private static final  BigDecimal oneTicket = BigDecimal.valueOf(1000);
     private final BigDecimal paidmoney;
 
     public moneyCheck(BigDecimal paidMoney) {

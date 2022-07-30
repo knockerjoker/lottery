@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class AutoTickets extends Tickets {
     private final int startingIndex = 0;
-    public AutoTickets(List<lottoBalls> lottoNumbers) {
+    public AutoTickets() {
         super(Collections.emptyList());
     }
 

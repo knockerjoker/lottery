@@ -46,5 +46,9 @@ public abstract class Tickets {
         return rank.rankAndPrize(ballsMatch, bonusMatch);
     }
 
+    public List<lottoBalls> getNumbers(){
+        return lottoNumbers;
+    }
+
     protected abstract List<lottoBalls> create(List<lottoBalls> lottoNumbers);
 }
